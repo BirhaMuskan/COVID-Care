@@ -39,7 +39,7 @@
                   <p class="cc-subtitle mb-3">Approve requests & update results/status.</p>
                   <div class="d-grid gap-2">
                     <a class="btn btn-cc btn-cc-primary" href="{{route('hospitalLoginForm')}}">Hospital Login</a>
-                    <a class="btn btn-cc btn-cc-success" href="{{route('hospitalRegForm')}}">Hospital Register</a>
+                    <a class="btn btn-cc btn-cc-success" href="{{route('userRegForm')}}">Hospital Register</a>
                   </div>
                 </div>
               </div>
@@ -49,7 +49,7 @@
                   <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
                     <div>
                       <h5 class="fw-bold mb-1">🛠 Admin</h5>
-                      <div class="cc-subtitle">Admin account is pre-created (no register).</div>
+                      <div class="cc-subtitle">Admin account is pre-created .</div>
                     </div>
                     <a class="btn btn-cc btn-cc-outline px-5" href="{{route('userLoginForm')}}">Admin Login</a>
                   </div>

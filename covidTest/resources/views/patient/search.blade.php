@@ -64,7 +64,7 @@
                 @foreach($hospitals as $hospital)
                 
                 <tr>
-                  <td class="fw-semibold">{{$hospital->name}} Hospital</td>
+                  <td class="fw-semibold">{{$hospital->name}}</td>
                   <td>{{$hospital->city}}</td>
                   <td><span class="badge bg-primary">{{$hospital->services}}</span></td>
                   <td><span class="badge bg-success">Available</span></td>

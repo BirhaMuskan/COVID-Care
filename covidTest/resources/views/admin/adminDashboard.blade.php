@@ -66,7 +66,7 @@
           <a class="side-link" data-bs-toggle="pill" href="#hospitals">🏥 Hospitals</a>
           <a class="side-link" data-bs-toggle="pill" href="#patients">🏥 Patients</a>
           <a class="side-link" data-bs-toggle="pill" href="#reports">📈 Reports</a>
-          <a class="side-link" data-bs-toggle="pill" href="#settings">⚙️ Settings</a>
+          <!-- <a class="side-link" data-bs-toggle="pill" href="#settings">⚙️ Settings</a> -->
         </div>
       </aside>
     </div>
@@ -128,24 +128,12 @@
               <tbody>
               
              @foreach ($users as $user)
+             @if($user->role !=='admin')
 <tr>
     <td>{{ $user->id }}</td>
     <td>{{ $user->name }}</td>
     <td>{{ $user->email }}</td>
     <td>{{ $user->role }}</td>
-
-    <!-- @if ($user->role == 'patient')
-        <td><span class="badge bg-success">Active</span></td>
-        <td class="text-end">
-            <a href="{{route('userDelete',$user->id)}}"><button class="btn btn-sm btn-outline-danger">Deactivate</button></a>
-        </td>
-
-    @elseif ($user->role == 'hospital')
-        <td><span class="badge bg-warning text-dark">Pending</span></td>
-        <td class="text-end">
-            <a href=""><button class="btn btn-sm btn-success">Approve</button></a>
-        </td>
-    @endif -->
 
     {{-- STATUS COLUMN --}}
 <td>
@@ -165,6 +153,7 @@
 <td class="text-end"><a href="{{ route('userDelete', $user->id) }}"class="btn btn-sm btn-outline-danger"> Deactivate</a>
 </td>
 </tr>
+@endif
 @endforeach
 
               </tbody>
@@ -394,7 +383,7 @@
 </div>
 
         <!-- 5) Settings -->
-        <div class="tab-pane fade" id="settings">
+        <!-- <div class="tab-pane fade" id="settings">
           <div class="card p-4">
             <h5 class="fw-bold">Admin Settings</h5>
 
@@ -413,7 +402,7 @@
 
             <button class="btn btn-success">Save Settings</button>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>

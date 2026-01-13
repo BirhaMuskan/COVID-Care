@@ -540,36 +540,7 @@
             </fieldset>
   </form>
 
-            <hr class="my-4">
-
-            <h6 class="fw-bold">Vaccine Stock (Demo)</h6>
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead class="table-light">
-                  <tr>
-                    <th>Vaccine</th>
-                    <th>Availability</th>
-                    <th>Qty</th>
-                    <th>Last Updated</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>ExampleVax</td>
-                    <td><span class="badge bg-success">Available</span></td>
-                    <td>120</td>
-                    <td>22-Dec-2025</td>
-                  </tr>
-                  <tr>
-                    <td>DemoVax</td>
-                    <td><span class="badge bg-danger">Unavailable</span></td>
-                    <td>0</td>
-                    <td>20-Dec-2025</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
+            
           </div>
         </div>
 
