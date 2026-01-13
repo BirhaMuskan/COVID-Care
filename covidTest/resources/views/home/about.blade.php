@@ -25,8 +25,8 @@
           </p>
 
           <div class="d-flex gap-3 flex-wrap">
-            <a href="#" class="btn btn-cc btn-cc-primary">Book Test / Vaccination</a>
-            <a href="#" class="btn btn-cc btn-cc-hero-outline">
+            <a href="{{route('authRole')}}" class="btn btn-cc btn-cc-primary">Book Test / Vaccination</a>
+            <a href="#features" class="btn btn-cc btn-cc-hero-outline">
               <i class="bi bi-play-circle me-2"></i> How It Works
             </a>
           </div>
@@ -40,8 +40,8 @@
           <img src="{{asset('home/assets/image/hospital.jpg')}}" class="img-fluid rounded-4">
 
           <div class="cc-layout-float-card">
-            <strong>Next Available</strong><br>
-            Today 2:30 PM
+            <strong>Partnered with</strong><br>
+            50,000+ Hospitals
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@
       <!-- Card 1 -->
       <div class="col-lg-4 col-md-6">
         <div class="cc-card">
-          <img src="{{ asset('home/assets/image/doctor working.jpg') }}" alt="Patient Registration">
+          <img src="{{ asset('home/assets/image/register for.jpg') }}" alt="Patient Registration">
           <h3>Patient Registration</h3>
           <p>Patients can register online with their details and create a secure profile for managing COVID test and vaccination appointments.</p>
         </div>
@@ -129,7 +129,7 @@
       <!-- Card 3 -->
       <div class="col-lg-4 col-md-6">
         <div class="cc-card">
-          <img src="{{ asset('home/assets/image/hospital.jpg') }}" alt="Book Appointment">
+          <img src="{{ asset('home/assets/image/book test.webp') }}" alt="Book Appointment">
           <h3>Book Appointment</h3>
           <p>Reserve your test or vaccination slot online. Receive instant confirmation and reminders for your appointment.</p>
         </div>
@@ -156,7 +156,7 @@
       <!-- Card 6 -->
       <div class="col-lg-4 col-md-6">
         <div class="cc-card">
-          <img src="{{ asset('home/assets/image/doctor file.jpg') }}" alt="Admin Dashboard">
+          <img src="{{ asset('home/assets/image/adminDashboard.jpg') }}" alt="Admin Dashboard">
           <h3>Admin Dashboard</h3>
           <p>Admins can monitor all patient and hospital activities, generate reports, and manage vaccination availability seamlessly.</p>
         </div>
@@ -207,6 +207,86 @@
         <p>Receive instant notifications for appointment confirmations, test results, and vaccination reminders.</p>
       </div>
     </div>
+
+    <!-- FAQ -->
+<section id="faq" style="padding-top:0;">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="cc-section-title">Frequently Asked Questions</h2>
+      <p class="cc-subtitle mb-0">Learn more about COVIDCare and how it helps patients and hospitals.</p>
+    </div>
+
+    <div class="accordion" id="faqAcc">
+
+      <div class="accordion-item mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true">
+            What is COVIDCare?
+          </button>
+        </h2>
+        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            COVIDCare is a digital healthcare platform designed to streamline COVID testing, vaccination management, and result tracking between patients and hospitals.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+            Who can use the COVIDCare platform?
+          </button>
+        </h2>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            COVIDCare is built for patients seeking COVID services, hospitals offering testing or vaccination, and administrators who ensure platform integrity and compliance.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+            How does COVIDCare ensure accuracy and reliability?
+          </button>
+        </h2>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            All hospitals are verified by administrators, and test results or vaccination records are uploaded directly by authorized hospital staff to ensure authenticity.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+            Is patient data secure on COVIDCare?
+          </button>
+        </h2>
+        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            Yes. COVIDCare follows secure authentication, role-based access, and protected data handling to keep patient information private and safe.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+            What problem does COVIDCare solve?
+          </button>
+        </h2>
+        <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            COVIDCare reduces manual paperwork, long queues, and confusion by offering a centralized, transparent system for COVID healthcare services.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
   </div>
 </section>
 

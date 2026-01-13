@@ -20,7 +20,7 @@
             <div class="d-flex flex-wrap gap-3">
               <a href="{{route('userRegForm')}}" class="btn btn-cc btn-cc-primary px-4">Book COVID Test</a>
               <a href="{{route('userRegForm')}}" class="btn btn-cc btn-cc-success px-4">Book Vaccination</a>
-              <a href="#find-hospital" class="btn btn-cc btn-cc-outline px-4 text-white border-white" style="background:rgba(255,255,255,.12);">Find Hospital</a>
+              <a href="{{route('showSearch')}}" class="btn btn-cc btn-cc-outline px-4 text-white border-white" style="background:rgba(255,255,255,.12);">Find Hospital</a>
             </div>
           </div>
 
@@ -166,14 +166,70 @@
 
   </div>
 </section>
+<!-- New section -->
+ <section class="hero-health py-5" >
+  <div class="container">
+    <div class="row align-items-center g-5">
 
+      <!-- LEFT CONTENT -->
+      <div class="col-md-6 text-white">
+
+        <span class="badge bg-light text-primary mb-3 px-3 py-2">
+          Verified Healthcare Network
+        </span>
+
+        <h1 class="fw-bold mb-3" style="line-height:1.2;">
+          Trusted Hospitals <br>
+          <span style="color:#ffd27d;">Qualified Doctors</span>
+        </h1>
+
+        <p class="opacity-75 mb-4" style="max-width:460px;">
+          Connect with verified hospitals and experienced doctors.
+          Book appointments, manage patient records, and access
+          COVID services — all in one secure platform.
+        </p>
+
+        <div class="d-flex gap-3 mb-4">
+          <a href="{{route('showSearch')}}"  class="btn btn-danger rounded-pill px-4">
+            Explore Hospitals
+          </a>
+          <a href="{{route('aboutPage')}}"  class="btn btn-outline-light rounded-pill px-4">
+            Learn More
+          </a>
+        </div>
+
+        <!-- STATS (MOVED INSIDE LEFT COLUMN) -->
+        <div class="d-flex gap-5 mt-3">
+          <div>
+            <h4 class="fw-bold mb-0">500+</h4>
+            <small class="opacity-75">Hospitals</small>
+          </div>
+          <div>
+            <h4 class="fw-bold mb-0">10k+</h4>
+            <small class="opacity-75">Patients</small>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-md-6 text-center position-relative">
+        <div class="doctor-image mx-auto">
+          <img src="{{ asset('home/assets/image/doctor.jpg') }}" alt="Doctor">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <section id="workflow" class="py-5">
   <div class="container">
 
     <div class="text-center mb-5">
-      <h2 class="mb-2">How COVIDCare Works</h2>
-      <p class="cc-muted">A smooth, simple, and safe COVID testing and vaccination experience</p>
-    </div>
+  <h2 class="mb-2">How <span class="text-accent">COVIDCare</span> Works</h2>
+  <p class="cc-muted">A smooth, simple, and safe COVID testing and vaccination experience</p>
+</div>
+
 
     <!-- Step 1 -->
     <div class="row align-items-center mb-5">
@@ -192,7 +248,7 @@
     <!-- Step 2 -->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6 image">
-        <img src="{{ asset('home/assets/image/hospital outer area.jpg') }}" class="img-fluid rounded-4" alt="Search Hospitals">
+        <img src="{{ asset('home/assets/image/search-hospital.png') }}" class="img-fluid rounded-4" alt="Search Hospitals">
       </div>
       <div class="col-md-6">
         <div class="workflow-text">
@@ -206,7 +262,7 @@
     <!-- Step 3 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6 image">
-        <img src="{{ asset('home/assets/image/hospital.jpg') }}" class="img-fluid rounded-4" alt="Book Appointment">
+        <img src="{{ asset('home/assets/image/book appointment.png') }}" class="img-fluid rounded-4" alt="Book Appointment">
       </div>
       <div class="col-md-6">
         <div class="workflow-text">
@@ -220,7 +276,7 @@
     <!-- Step 4 -->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6 image">
-        <img src="{{ asset('home/assets/image/doctor microscope.jpg') }}" class="img-fluid rounded-4" alt="View Results">
+        <img src="{{ asset('home/assets/image/result.png') }}" class="img-fluid rounded-4" alt="View Results">
       </div>
       <div class="col-md-6">
         <div class="workflow-text">
@@ -289,7 +345,7 @@
  
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" style="padding-top:150px; padding-bottom:200px;">
     <div class="container">
       <div class="row g-4 align-items-center">
         <div class="col-lg-6">
@@ -310,8 +366,8 @@
           </div>
 
           <div class="mt-3 d-flex gap-2 flex-wrap">
-            <a href="#register" class="btn btn-cc btn-cc-success px-4">Register Now</a>
-            <a href="#guidelines" class="btn btn-cc btn-cc-outline px-4">View Guidelines</a>
+            <a href="{{route('authRole')}}"  class="btn btn-cc btn-cc-success px-4">Register Now</a>
+            <a href="{{route('guidelinePage')}}"  class="btn btn-cc btn-cc-outline px-4">View Guidelines</a>
           </div>
         </div>
 
@@ -357,62 +413,7 @@
       </div>
     </div>
   </section>
-<!-- New section -->
- <section class="hero-health py-5" >
-  <div class="container">
-    <div class="row align-items-center g-5">
 
-      <!-- LEFT CONTENT -->
-      <div class="col-md-6 text-white">
-
-        <span class="badge bg-light text-primary mb-3 px-3 py-2">
-          Verified Healthcare Network
-        </span>
-
-        <h1 class="fw-bold mb-3" style="line-height:1.2;">
-          Trusted Hospitals <br>
-          <span style="color:#ffd27d;">Qualified Doctors</span>
-        </h1>
-
-        <p class="opacity-75 mb-4" style="max-width:460px;">
-          Connect with verified hospitals and experienced doctors.
-          Book appointments, manage patient records, and access
-          COVID services — all in one secure platform.
-        </p>
-
-        <div class="d-flex gap-3 mb-4">
-          <a href="#" class="btn btn-danger rounded-pill px-4">
-            Explore Hospitals
-          </a>
-          <a href="#" class="btn btn-outline-light rounded-pill px-4">
-            Learn More
-          </a>
-        </div>
-
-        <!-- STATS (MOVED INSIDE LEFT COLUMN) -->
-        <div class="d-flex gap-5 mt-3">
-          <div>
-            <h4 class="fw-bold mb-0">500+</h4>
-            <small class="opacity-75">Hospitals</small>
-          </div>
-          <div>
-            <h4 class="fw-bold mb-0">10k+</h4>
-            <small class="opacity-75">Patients</small>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- RIGHT IMAGE -->
-      <div class="col-md-6 text-center position-relative">
-        <div class="doctor-image mx-auto">
-          <img src="{{ asset('home/assets/image/doctor.jpg') }}" alt="Doctor">
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
   <!-- FAQ -->

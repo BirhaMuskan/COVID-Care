@@ -92,14 +92,19 @@ Route::get('/Patient/Profile',[patientController::class, 'patientProfile'])->nam
 //Patient account delete
 Route::get('PatdeleteAccount/{id}',[patientController::class,'PatdeleteAccount'])->name('PatdeleteAccount')->middleware(patient::class);
 
+// show search hospital search page
 Route::get('/showSearch', [patientController::class, 'showSearch'])->name('showSearch');
 
+//search hospital
 Route::post('/search', [patientController::class, 'search'])->name('search');
 
 
 
 
+
 ////    HOSPITAL CONTROLLER  //////
+
+
 
 
 // show hospital profile page

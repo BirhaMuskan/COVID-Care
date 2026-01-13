@@ -32,33 +32,33 @@
             <div class="contact-collage">
               <div class="c-tile c-a">
                 <img
-                  src="{{asset('home/assets/image/contact/hero-1.jpg')}}"
+                  src="{{asset('home/assets/image/support.jpg')}}"
                   alt="Support"
-                  onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=70';"
+            
                 />
                 <div class="c-cap">Support</div>
               </div>
               <div class="c-tile c-b">
                 <img
-                  src="{{asset('home/assets/image/contact/hero-2.jpg')}}"
+                  src="{{asset('home/assets/image/hospital3.jpg')}}"
                   alt="Hospitals"
-                  onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=70';"
+        
                 />
                 <div class="c-cap">Hospitals</div>
               </div>
               <div class="c-tile c-c">
                 <img
-                  src="{{asset('home/assets/image/contact/hero-3.jpg')}}"
+                  src="{{asset('home/assets/image/appointments fake.jpg')}}"
                   alt="Appointments"
-                  onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=70';"
+                 
                 />
                 <div class="c-cap">Appointments</div>
               </div>
               <div class="c-tile c-d">
                 <img
-                  src="{{asset('home/assets/image/contact/hero-4.jpg')}}"
+                  src="{{asset('home/assets/image/chat.jpg')}}"
                   alt="Chat"
-                  onerror="this.src='https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=900&q=70';"
+                  
                 />
                 <div class="c-cap">Chat</div>
               </div>
@@ -318,9 +318,9 @@
           <div class="cc-card cc-card-hover p-4 h-100">
             <div class="faq-img">
               <img
-                src="{{asset('home/assets/image/contact/faq-1.jpg')}}"
+                src="{{asset('home/assets/image/where-status.jpg')}}"
                 alt="FAQ"
-                onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=70';"
+               
               />
             </div>
             <h5 class="fw-bold mt-3 mb-2">Where can I see my status?</h5>
@@ -332,9 +332,9 @@
           <div class="cc-card cc-card-hover p-4 h-100">
             <div class="faq-img">
               <img
-                src="{{asset('home/assets/image/contact/faq-2.jpg')}}"
+                src="{{asset('home/assets/image/how register-hospital.jpg')}}"
                 alt="FAQ"
-                onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=70';"
+            
               />
             </div>
             <h5 class="fw-bold mt-3 mb-2">How to register as a hospital?</h5>
@@ -346,9 +346,9 @@
           <div class="cc-card cc-card-hover p-4 h-100">
             <div class="faq-img">
               <img
-                src="{{asset('home/assets/image/contact/faq-3.jpg')}}"
+                src="{{asset('home/assets/image/can-change-slot.jpg')}}"
                 alt="FAQ"
-                onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde67548?auto=format&fit=crop&w=1200&q=70';"
+                
               />
             </div>
             <h5 class="fw-bold mt-3 mb-2">Can I change my slot?</h5>

@@ -16,8 +16,8 @@
           </p>
 
           <div class="d-flex gap-2 flex-wrap mt-3">
-            <a class="btn btn-cc btn-cc-primary px-4" href="#patient">I’m a Patient</a>
-            <a class="btn btn-cc btn-cc-outline px-4" href="#hospital">I’m a Hospital</a>
+            <a class="btn btn-cc btn-cc-primary px-4" href="{{route('authRole')}}">I’m a Patient</a>
+            <a class="btn btn-cc btn-cc-outline px-4" href="{{route('authRole')}}">I’m a Hospital</a>
           </div>
 
           <div class="guide-badges mt-4">
@@ -32,45 +32,45 @@
           <div class="guide-collage">
             <div class="tile tile-a">
               <img
-                src="{{asset('home/assets/image/guidelines/hero-hospital.jpg')}}"
+                src="{{asset('home/assets/image/hospital2.jpg')}}"
                 alt="Hospital"
-                onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=70';"
+                
               />
               <div class="tile-cap">Verified Hospitals</div>
             </div>
 
             <div class="tile tile-b">
               <img
-                src="{{asset('home/assets/image/guidelines/hero-search.jpg')}}"
+                src="{{asset('home/assets/image/new search.jpg')}}"
                 alt="Search"
-                onerror="this.src='https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=70';"
+                
               />
               <div class="tile-cap">Search</div>
             </div>
 
             <div class="tile tile-c">
               <img
-                src="{{asset('home/assets/image/guidelines/hero-booking.jpg')}}"
+                src="{{asset('home/assets/image/booking-custom.png')}}"
                 alt="Booking"
-                onerror="this.src='https://images.unsplash.com/photo-1582719478171-2ff7b57a7b18?auto=format&fit=crop&w=900&q=70';"
+                
               />
               <div class="tile-cap">Booking</div>
             </div>
 
             <div class="tile tile-d">
               <img
-                src="{{asset('home/assets/image/guidelines/hero-approval.jpg')}}"
+                src="{{asset('home/assets/image/approval.jpg')}}"
                 alt="Approval"
-                onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde67548?auto=format&fit=crop&w=900&q=70';"
+                
               />
               <div class="tile-cap">Approval</div>
             </div>
 
             <div class="tile tile-e">
               <img
-                src="{{asset('home/assets/image/guidelines/hero-result.jpg')}}"
+                src="{{asset('home/assets/image/results.jpg')}}"
                 alt="Result"
-                onerror="this.src='https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&fit=crop&w=900&q=70';"
+                
               />
               <div class="tile-cap">Result</div>
             </div>
@@ -78,44 +78,10 @@
         </div>
       </div>
 
-      <!-- Quick cards bar -->
-      <div class="guide-quickbar mt-4">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <div class="guide-quick-item">
-              <div class="guide-icon">1</div>
-              <div>
-                <div class="fw-bold">Choose Service</div>
-                <div class="cc-subtitle small">Test / Vaccine</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 border-start">
-            <div class="guide-quick-item">
-              <div class="guide-icon">2</div>
-              <div>
-                <div class="fw-bold">Book Slot</div>
-                <div class="cc-subtitle small">Pick a time</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 border-start">
-            <div class="guide-quick-item">
-              <div class="guide-icon">3</div>
-              <div>
-                <div class="fw-bold">Track Status</div>
-                <div class="cc-subtitle small">My Appointment</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
   </section>
 
   <!-- QUICK START (3 big picture cards) -->
-  <section class="guide-section guide-soft">
+  <section class="guide-section guide-soft" style="padding-top:100px; padding-bottom:100px;">
     <div class="container">
       <div class="d-flex justify-content-between align-items-end gap-3 mb-4 flex-wrap">
         <div>
@@ -130,16 +96,16 @@
           <article class="guide-card">
             <div class="guide-card-img">
               <img
-                src="{{asset('home/assets/image/guidelines/patient-test.jpg')}}"
+                src="{{asset('home/assets/image/covid test.webp')}}"
                 alt="Patient Test"
-                onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=70';"
+                
               />
               <span class="guide-chip">Patient</span>
             </div>
             <div class="guide-card-body">
               <h3>Book a Test</h3>
               <p>Register, find a hospital, request a test, and track your appointment.</p>
-              <a class="btn btn-cc btn-cc-primary px-4" href="#patient">Patient Steps</a>
+              <a class="btn btn-cc btn-cc-primary px-4" href="{{route('authRole')}}">Patient Steps</a>
             </div>
           </article>
         </div>
@@ -148,16 +114,16 @@
           <article class="guide-card">
             <div class="guide-card-img">
               <img
-                src="{{asset('home/assets/image/guidelines/patient-vaccine.jpg')}}"
+                src="{{asset('home/assets/image/vaccine.jpg')}}"
                 alt="Patient Vaccine"
-                onerror="this.src='https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=1200&q=70';"
+                
               />
               <span class="guide-chip guide-chip-green">Patient</span>
             </div>
             <div class="guide-card-body">
               <h3>Book a Vaccination</h3>
               <p>Choose vaccine service, book a slot, and view vaccination status.</p>
-              <a class="btn btn-cc btn-cc-success px-4" href="#patient">Patient Steps</a>
+              <a class="btn btn-cc btn-cc-success px-4" href="{{route('authRole')}}">Patient Steps</a>
             </div>
           </article>
         </div>
@@ -166,16 +132,16 @@
           <article class="guide-card">
             <div class="guide-card-img">
               <img
-                src="{{asset('home/assets/image/guidelines/hospital-register.jpg')}}"
+                src="{{asset('home/assets/image/register as hospital.jpg')}}"
                 alt="Hospital Register"
-                onerror="this.src='https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1200&q=70';"
+                
               />
               <span class="guide-chip guide-chip-red">Hospital</span>
             </div>
             <div class="guide-card-body">
               <h3>Register as Hospital</h3>
               <p>Submit hospital details, get approved, and start managing requests.</p>
-              <a class="btn btn-cc btn-cc-outline px-4" href="#hospital">Hospital Steps</a>
+              <a class="btn btn-cc btn-cc-outline px-4" href="{{route('authRole')}}">Hospital Steps</a>
             </div>
           </article>
         </div>
@@ -184,7 +150,7 @@
   </section>
 
   <!-- PATIENT GUIDE -->
-  <section id="patient" class="guide-section">
+  <section id="patient" class="guide-section" style="padding-top:150px; padding-bottom:100px;">
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
@@ -225,25 +191,25 @@
           <div class="guide-strip">
             <div class="strip-tile">
               <img
-                src="{{asset('home/assets/image/guidelines/screen-register.jpg')}}"
+                src="{{asset('home/assets/image/register.png')}}"
                 alt="Register Screen"
-                onerror="this.src='https://images.unsplash.com/photo-1582719478171-2ff7b57a7b18?auto=format&fit=crop&w=1200&q=70';"
+                
               />
               <div class="cap">Register Screen</div>
             </div>
             <div class="strip-tile">
               <img
-                src="{{asset('home/assets/image/guidelines/screen-search.jpg')}}"
+                src="{{asset('home/assets/image/search-hospital.png')}}"
                 alt="Search Hospitals"
-                onerror="this.src='https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=70';"
+                
               />
               <div class="cap">Search Hospitals</div>
             </div>
             <div class="strip-tile">
               <img
-                src="{{asset('home/assets/image/guidelines/screen-appointment.jpg')}}"
+                src="{{asset('home/assets/image/myAppointments.png')}}"
                 alt="My Appointment"
-                onerror="this.src='https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&fit=crop&w=1200&q=70';"
+            
               />
               <div class="cap">My Appointment</div>
             </div>
@@ -255,7 +221,7 @@
   </section>
 
   <!-- HOSPITAL GUIDE (Masonry gallery) -->
-  <section id="hospital" class="guide-section guide-gallery">
+  <section id="hospital" class="guide-section guide-gallery" style="padding-top:150px; padding-bottom:100px;">
     <div class="container">
       <div class="text-center mb-4">
         <h2 class="cc-section-title mb-2">For Hospitals: How to Register & Operate</h2>
@@ -268,16 +234,16 @@
       <div class="guide-masonry">
         <div class="m-item tall">
           <img
-            src="{{asset('home/assets/image/guidelines/hosp-reg.jpg')}}"
+            src="{{asset('home/assets/image/hospital-register.png')}}"
             alt="Hospital Registration"
-            onerror="this.src='https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1200&q=70';"
+       
           />
           <div class="m-cap">Hospital Registration</div>
         </div>
 
         <div class="m-item">
           <img
-            src="{{asset('home/assets/image/guidelines/hosp-approval.jpg')}}"
+            src="{{asset('home/assets/image/status.png')}}"
             alt="Approval"
             onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde67548?auto=format&fit=crop&w=1200&q=70';"
           />
@@ -286,7 +252,7 @@
 
         <div class="m-item">
           <img
-            src="{{asset('home/assets/image/guidelines/hosp-requests.jpg')}}"
+            src="{{asset('home/assets/image/request.png')}}"
             alt="Manage Requests"
             onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=70';"
           />
@@ -295,7 +261,7 @@
 
         <div class="m-item">
           <img
-            src="{{asset('home/assets/image/guidelines/hosp-results.jpg')}}"
+            src="{{asset('home/assets/image/update-result.png')}}"
             alt="Update Results"
             onerror="this.src='https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&fit=crop&w=1200&q=70';"
           />
@@ -304,16 +270,16 @@
 
         <div class="m-item wide">
           <img
-            src="{{asset('home/assets/image/guidelines/hosp-slots.jpg')}}"
+            src="{{asset('home/assets/image/profile.png')}}"
             alt="Slots and Status"
             onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=70';"
           />
-          <div class="m-cap">Slots + Status Updates</div>
+          <div class="m-cap">Manage your Profile</div>
         </div>
 
         <div class="m-item">
           <img
-            src="{{asset('home/assets/image/guidelines/hosp-reports.jpg')}}"
+            src="{{asset('home/assets/image/reports.png')}}"
             alt="Reports"
             onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=70';"
           />
@@ -324,72 +290,86 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="guide-section">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-end gap-3 mb-4 flex-wrap">
-        <div>
-          <h2 class="cc-section-title mb-1">Frequently Asked Questions</h2>
-          <p class="cc-subtitle mb-0">Common questions from patients and hospitals.</p>
-        </div>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="cc-card cc-card-hover p-4 h-100">
-            <div class="guide-mini-img">
-              <img
-                src="{{asset('home/assets/image/guidelines/faq-book.jpg')}}"
-                alt="FAQ Book"
-                onerror="this.src='https://images.unsplash.com/photo-1582719478171-2ff7b57a7b18?auto=format&fit=crop&w=1200&q=70';"
-              />
-            </div>
-            <h5 class="fw-bold mt-3 mb-2">How do I book?</h5>
-            <p class="cc-subtitle mb-0">Register → Search → Request → Book slot → Track in “My Appointment”.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="cc-card cc-card-hover p-4 h-100">
-            <div class="guide-mini-img">
-              <img
-                src="{{asset('home/assets/image/guidelines/faq-change.jpg')}}"
-                alt="FAQ Change"
-                onerror="this.src='https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&fit=crop&w=1200&q=70';"
-              />
-            </div>
-            <h5 class="fw-bold mt-3 mb-2">Can I cancel or change?</h5>
-            <p class="cc-subtitle mb-0">You can re-submit a request or select another hospital if needed.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="cc-card cc-card-hover p-4 h-100">
-            <div class="guide-mini-img">
-              <img
-                src="{{asset('home/assets/image/guidelines/faq-approve.jpg')}}"
-                alt="FAQ Approve"
-                onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde67548?auto=format&fit=crop&w=1200&q=70';"
-              />
-            </div>
-            <h5 class="fw-bold mt-3 mb-2">How hospital approval works?</h5>
-            <p class="cc-subtitle mb-0">Hospitals submit details → admin verifies → hospital becomes active.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row g-3 mt-4">
-        <div class="col-lg-4">
-          <div class="cc-card p-3"><div class="cc-subtitle"><b>Support:</b> Use Contact Us or email support</div></div>
-        </div>
-        <div class="col-lg-4">
-          <div class="cc-card p-3"><div class="cc-subtitle"><b>Status:</b> Check “My Appointment” for updates</div></div>
-        </div>
-        <div class="col-lg-4">
-          <div class="cc-card p-3"><div class="cc-subtitle"><b>Hospitals:</b> Keep slots updated to reduce pending</div></div>
-        </div>
-      </div>
+  <!-- GUIDELINES FAQ -->
+<section id="faq" style="padding-top:150px; padding-bottom:100px;">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="cc-section-title">Guidelines & Help</h2>
+      <p class="cc-subtitle mb-0">
+        Important instructions to ensure a smooth and safe experience on COVIDCare.
+      </p>
     </div>
-  </section>
+
+    <div class="accordion" id="faqAcc">
+
+      <div class="accordion-item mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#g1" aria-expanded="true">
+            What should patients do before booking a COVID test or vaccination?
+          </button>
+        </h2>
+        <div id="g1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            Patients should ensure their profile information is accurate, select a verified hospital, and carefully review the available services and time slots before submitting a request.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g2">
+            What guidelines should be followed on the appointment day?
+          </button>
+        </h2>
+        <div id="g2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            Patients are advised to arrive on time, carry valid identification if required by the hospital, and follow all health and safety instructions provided by the medical staff.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g3">
+            What responsibilities do hospitals have on COVIDCare?
+          </button>
+        </h2>
+        <div id="g3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            Hospitals must keep service details up to date, respond to appointment requests promptly, and upload accurate test results or vaccination records.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g4">
+            How should test results and vaccination records be handled?
+          </button>
+        </h2>
+        <div id="g4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            Results and records should only be uploaded by authorized hospital staff and must reflect verified medical outcomes to maintain platform credibility.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g5">
+            What should users do if they face issues or incorrect information?
+          </button>
+        </h2>
+        <div id="g5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body cc-subtitle">
+            Users should immediately report issues through the platform or contact support so that administrators can review and resolve the matter.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 </main>
 
