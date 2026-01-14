@@ -5,6 +5,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\patientController;
 use App\Http\Controllers\hospitalController;
+use App\Http\Controllers\reportController;
 use App\Http\Controllers\homeController;
 use App\Http\Middleware\hospital;
 use App\Http\Middleware\patient;
@@ -177,6 +178,9 @@ Route::get('/allUsers',[adminController::class,'allUsers'])->name('allUsers')->m
 // show admin dashboard with fetched users
 Route::get('/adminDashboard',[adminController::class,'adminDashboard'])->name('adminDashboard')->middleware(admin::class);
 
+// show system reports
+Route::get('/systemReports',[adminController::class,'systemReports'])->name('systemReports')->middleware(admin::class);
+
 //Approve
 Route::get('/approve/{id}',[adminController::class,'approve'])->name('approve')->middleware(admin::class);
 
@@ -205,6 +209,11 @@ Route::get('/logout',[authController::class,'logout'])->name('logout');
 
 
 
+
+
+///////Report Controller///////
+
+Route::post("/generateReport",[reportController::class,'generateReport'])->name('generateReport');
 
 
 

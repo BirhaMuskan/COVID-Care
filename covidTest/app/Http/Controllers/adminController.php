@@ -81,5 +81,10 @@ public function approveHospitalFromUsers($userId)
         }
     }
 
+    public function systemReports(){
+        $test=TestBooking::all();
+        return view('admin.systemReport',compact('test'));
+    }
+
    
 }
