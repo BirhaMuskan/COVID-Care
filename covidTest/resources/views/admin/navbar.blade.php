@@ -14,6 +14,10 @@
   <!-- Theme CSS -->
   <link rel="stylesheet" href="{{ asset('home/assets/css/home.css') }}">
 
+   <!-- Bootstrap Icons (REQUIRED) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
   <style>
     body{font-family:Poppins}
     .dash-wrap{padding-top:90px;padding-bottom:40px}

@@ -155,8 +155,8 @@
 
   </div>
 
-  <!-- Quick Actions
-  <div class="card p-4">
+  {{-- Quick Actions --}}
+  {{-- <div class="card p-4">
     <h5 class="fw-bold mb-2">Quick Actions</h5>
     <div class="d-flex flex-wrap gap-2">
       <a class="btn btn-success" data-bs-toggle="pill" href="#tab-requests">
@@ -175,8 +175,82 @@
         Update Vaccination
       </a>
     </div>
-  </div> -->
+  </div>  --}}
+<div class="card p-4">
 
+@if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+@endif
+
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
+              <div>
+                <h5 class="fw-bold mb-0">Patient Requests</h5>
+                <div class="muted">Approve or reject appointment requests.</div>
+              </div>
+             
+            </div>
+
+            <div class="table-responsive mt-3">
+              <table class="table table-bordered">
+                <thead class="table-light">
+                  <tr>
+                    <th>Request ID</th>
+                    <th>Patient</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Slot</th>
+                    <th>Notes</th>
+                    <th class="text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+  @forelse ($pendingBookings as $booking)
+<tr>
+    <td>R-{{ $booking->id }}</td>
+
+    <td>
+        {{ $booking->user->name }} <br>
+        <small>CNIC: {{ $booking->user->cnic }}</small>
+    </td>
+
+    <td>
+        <span class="badge bg-info">
+            {{ $booking->service }}
+        </span>
+    </td>
+
+    <td>{{ $booking->preferred_date }}</td>
+    <td>{{ $booking->time_slot }}</td>
+
+    <td class="text-end">
+      @if($booking->service == 'COVID Test')
+        <a href="{{route('approveTestBooking',$booking->id)}}" class="btn btn-sm btn-success">Approve</a>
+        <a href="{{route('rejectTestBooking',$booking->id)}}" class="btn btn-sm btn-danger">Reject</a>
+      @elseif($booking->service == 'Vaccination')
+        <a href="{{route('approveVaccBooking',$booking->id)}}" class="btn btn-sm btn-success">Approve</a>
+        <a href="{{route('rejectVaccBooking',$booking->id)}}" class="btn btn-sm btn-danger">Reject</a>
+
+        @endif
+
+    </td>
+</tr>
+@empty
+<tr>
+    <td colspan="6" class="text-center text-muted">
+        No pending bookings
+    </td>
+</tr>
+@endforelse
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
 </div>
 
 
@@ -195,14 +269,6 @@
               <div>
                 <h5 class="fw-bold mb-0">Patient Requests</h5>
                 <div class="muted">Approve or reject appointment requests.</div>
-              </div>
-              <div class="d-flex gap-2">
-                <input class="form-control form-control-sm" placeholder="Search patient / CNIC">
-                <select class="form-select form-select-sm">
-                  <option>All</option>
-                  <option>COVID Test</option>
-                  <option>Vaccination</option>
-                </select>
               </div>
             </div>
 

@@ -2,73 +2,294 @@
 
 @section('content')
 
-  <!-- HERO -->
-  <header id="home" class="cc-hero">
+  <style>
+    :root{
+      --cc-blue:#1c6ae4;
+      --cc-blue-2:#2f7cf0;
+      --cc-green:#18a06a;
+      --cc-red:#e64646;
+      --cc-ink:#0b1b3a;
+      --cc-muted:#6c7a90;
+      --cc-bg:#f4f8ff;
+      --cc-card:#ffffff;
+      --cc-border:rgba(15,23,42,.10);
+      --cc-shadow: 0 18px 45px rgba(16,24,40,.08);
+      --cc-shadow-sm: 0 10px 25px rgba(16,24,40,.06);
+      --cc-radius: 18px;
+      --cc-radius-lg: 24px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--cc-ink);
+      background:var(--cc-bg);
+    }
+    .container{ width:min(1180px, calc(100% - 40px)); margin:0 auto; }
+
+   
+    .brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; color:#fff; }
+    .brand-badge{
+      width:36px; height:36px; border-radius:12px;
+      background:linear-gradient(135deg, var(--cc-blue), var(--cc-blue-2));
+      box-shadow:var(--cc-shadow-sm);
+      display:grid; place-items:center; color:#fff; font-weight:900;
+    }
+
+
+    /* ===== Hero wrapper ===== */
+    .hero-wrap{ padding:92px 0 30px; }
+
+    .hero{
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      min-height:520px;
+      box-shadow:var(--cc-shadow);
+      border:1px solid var(--cc-border);
+
+      /* BACKGROUND IMAGE GOES HERE (replace later) */
+      background:
+        url("{{ asset('home/assets/image/hero.png') }}") center/cover no-repeat;
+      background-color:#dbeafe; /* fallback */
+    }
+
+    /* LEFT SHADING (gradually fades to right) + slight overall tint */
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        /* main left-to-right shed */
+        linear-gradient(90deg,
+          rgba(9, 30, 66, .74) 0%,
+          rgba(9, 30, 66, .56) 22%,
+          rgba(9, 30, 66, .34) 42%,
+          rgba(9, 30, 66, .12) 60%,
+          rgba(9, 30, 66, 0) 72%
+        ),
+        /* gentle cool tint over image */
+        radial-gradient(900px 520px at 22% 42%, rgba(28,106,228,.25), rgba(28,106,228,0) 60%);
+      pointer-events:none;
+      z-index:1;
+    }
+
+    /* Content layer on top */
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      padding:54px 54px 110px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:26px;
+      align-items:center;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:52px;
+      line-height:1.06;
+      letter-spacing:-.7px;
+      color:#fff;
+      text-shadow:0 10px 35px rgba(0,0,0,.22);
+      max-width:620px;
+    }
+    .hero p{
+      margin:0 0 22px;
+      max-width:520px;
+      color:rgba(255,255,255,.86);
+      font-size:15px;
+      line-height:1.75;
+    }
+
+    .hero-cta{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    }
+
+    .btn{
+      border:none; border-radius:14px;
+      padding:12px 16px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.15s ease;
+      font-size:14px;
+      display:inline-flex; align-items:center; gap:10px;
+      text-decoration:none;
+      user-select:none;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--cc-blue), var(--cc-blue-2));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(28,106,228,.30);
+    }
+    .btn-primary:hover{ transform:translateY(-1px); }
+
+    .btn-ghost{
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
+      backdrop-filter: blur(10px);
+    }
+    .btn-ghost:hover{ background:rgba(255,255,255,.20); }
+
+    .play{
+      width:34px; height:34px; border-radius:12px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.24);
+      display:grid; place-items:center;
+    }
+    .triangle{
+      width:0;height:0;
+      border-left:9px solid #fff;
+      border-top:6px solid transparent;
+      border-bottom:6px solid transparent;
+      margin-left:2px;
+      opacity:.95;
+    }
+
+    /* Right side: keep EMPTY / placeholder area (no separate card),
+       so it still looks like the screenshot where image is background */
+    .hero-placeholder{
+      height:320px;
+      border-radius:24px;
+      border:1px dashed rgba(255,255,255,.32);
+      background:rgba(255,255,255,.06);
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:18px;
+      color:rgba(255,255,255,.85);
+      backdrop-filter: blur(6px);
+    }
+    .hero-placeholder strong{ display:block; color:#fff; margin-bottom:6px; }
+    .hero-placeholder code{
+      color:#fff;
+      background:rgba(0,0,0,.18);
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    /* Floating stats bar like the design */
+    .stats{
+      position:absolute;
+      left:54px; right:54px;
+      bottom:18px;
+      z-index:3;
+
+      background:rgba(255,255,255,.72);
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,.30);
+      border-radius:22px;
+      box-shadow:var(--cc-shadow-sm);
+      padding:18px 18px;
+
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .stat{ padding:10px 12px; border-radius:16px; }
+    .stat .num{ font-size:22px; font-weight:800; color:var(--cc-ink); letter-spacing:-.3px; }
+    .stat .lbl{ font-size:12px; color:rgba(11,27,58,.62); font-weight:600; }
+
+    /* Optional small badge (top right) */
+    .badge{
+      position:absolute;
+      right:22px; top:82px;
+      z-index:4;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(255,255,255,.42);
+      border-radius:18px;
+      padding:10px 12px;
+      display:flex; align-items:center; gap:10px;
+      box-shadow:var(--cc-shadow-sm);
+      backdrop-filter: blur(10px);
+    }
+    .badge .dot{
+      width:10px; height:10px; border-radius:999px;
+      background:var(--cc-green);
+      box-shadow:0 0 0 6px rgba(24,160,106,.15);
+    }
+    .badge .big{ font-weight:800; color:var(--cc-ink); line-height:1; }
+    .badge .small{ font-size:12px; color:rgba(11,27,58,.62); font-weight:600; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .nav-links{display:none}
+      .hero-inner{ grid-template-columns:1fr; padding:40px 26px 120px; }
+      .hero h1{ font-size:42px; }
+      .stats{ grid-template-columns: repeat(2,1fr); left:26px; right:26px; }
+      .badge{ top:74px; }
+    }
+    @media (max-width: 520px){
+      .hero h1{ font-size:34px; }
+      .stats{ grid-template-columns:1fr; }
+      .icon-btn{ width:40px; height:40px; }
+      .badge{ display:none; }
+    }
+  </style>
+   <!-- HERO -->
+  <main class="hero-wrap">
     <div class="container">
-      <div class="cc-hero-card p-4 p-lg-5">
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-7 position-relative">
-            <div class="cc-hero-badges mb-3">
-              <span class="cc-badge">Approved Hospitals</span>
-              <span class="cc-badge">Digital Reports</span>
-              <span class="cc-badge">Fast Booking</span>
-            </div>
+      <section class="hero" aria-label="Hero">
 
-            <h1 class="display-5 mb-3">Online COVID Test &amp;<br class="d-none d-md-block"> Vaccination Booking System</h1>
-            <p class="lead mb-4">Get tested and vaccinated easily online. Search hospitals, book appointments, and view your reports securely.</p>
+        <!-- Optional badge -->
+        <div class="badge" aria-label="Patients recovered">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <div class="big">150K+</div>
+            <div class="small">Bookings supported</div>
+          </div>
+        </div>
 
-            <div class="d-flex flex-wrap gap-3">
-              <a href="{{route('userRegForm')}}" class="btn btn-cc btn-cc-primary px-4">Book COVID Test</a>
-              <a href="{{route('userRegForm')}}" class="btn btn-cc btn-cc-success px-4">Book Vaccination</a>
-              <a href="{{route('showSearch')}}" class="btn btn-cc btn-cc-outline px-4 text-white border-white" style="background:rgba(255,255,255,.12);">Find Hospital</a>
+        <div class="hero-inner">
+          <!-- LEFT: text on top of shaded background -->
+          <div>
+            <h1>Compassionate care,<br/>exceptional results</h1>
+            <p>
+              COVIDCare helps you book a COVID test, register for vaccination, and find verified hospitals near you.
+              Simple steps, fast booking, and clear guidance.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="{{route('authRole')}}">
+                Register as a Patient <span aria-hidden="true"></span>
+              </a>
+
+              <a class="btn btn-ghost" href="{{route('authRole')}}">
+                {{-- <span class="play" aria-hidden="true"></span> --}}
+                Register as a Hospital
+              </a>
             </div>
           </div>
-
-<div class="col-lg-5 position-relative d-none d-lg-block">
-
-  <!-- Glow behind -->
-  <div style="
-    position:absolute;
-    right:-90px;
-    top:50%;
-    transform:translateY(-50%);
-    width:380px;
-    height:380px;
-    background:rgba(255,255,255,0.18);
-    filter:blur(70px);
-    border-radius:50%;
-    z-index:0;
-  "></div>
-
-  <!-- Image on top (not blurred) -->
-  <div style="
-    position:absolute;
-    right:-80px;
-    top:50%;
-    transform:translateY(-50%);
-    width:520px;
-    z-index:2;
-    pointer-events:none;
-    padding-right:50px;
-  ">
-    <img
-      src="{{ asset('home/assets/image/doctors.png') }}"
-      alt="Medical Team"
-      class="img-fluid"
-      style="
-        filter: drop-shadow(0 22px 45px rgba(0,0,0,0.28));
-      "
-    >
-  </div>
-
-</div>
-
-
         </div>
-      </div>
+
+        <!-- STATS BAR -->
+        <div class="stats" role="list" aria-label="Quick stats">
+          <div class="stat" role="listitem">
+            <div class="num">2000+</div>
+            <div class="lbl">Partner hospitals</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="num">95%</div>
+            <div class="lbl">User satisfaction</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="num">5000+</div>
+            <div class="lbl">Tests & vaccines booked</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="num">100,000+</div>
+            <div class="lbl">Patients</div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
 
       <!-- QUICK ACTION BAR -->
-      <div class="cc-quickbar mt-4">
+      {{-- <div class="cc-quickbar mt-4">
         <div class="row g-0">
           <div class="col-md-3 border-end">
             <div class="cc-quick-item">
@@ -110,7 +331,7 @@
       </div>
 
     </div>
-  </header>
+  </header> --}}
 
 
  
@@ -378,7 +599,7 @@
                 <h5 class="fw-bold mb-1">Safe &amp; Verified Process</h5>
                 <div class="cc-subtitle">Appointments, approvals, and reports in one system.</div>
               </div>
-              <span class="badge text-bg-primary rounded-pill">Trusted</span>
+              {{-- <span class="badge text-bg-primary rounded-pill">Trusted</span> --}}
             </div>
             <hr />
             <div class="row g-3">
