@@ -17,7 +17,7 @@
         <span class="cc-brand-badge"></span>
         <span class="cc-brand-text fs-4"><span>COVID</span><span>Care</span></span>
       </a>
-      <a class="btn btn-cc btn-cc-outline" href="auth-role.html">Back</a>
+      <a class="btn btn-cc btn-cc-outline" href="{{route('authRole')}}">Back</a>
     </div>
   </nav>
 
@@ -44,7 +44,7 @@
 
             <div class="text-center mt-3">
               <span class="cc-subtitle">No account?</span>
-              <a href="patient-register.html" class="fw-semibold text-decoration-none">Register</a>
+              <a href="{{route('authRole')}}" class="fw-semibold text-decoration-none">Register</a>
             </div>
           </div>
         </div>
